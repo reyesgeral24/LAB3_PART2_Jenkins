@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BinaryController {
 
-    @GetMapping("/")
+    @GetMapping("/calculator")
     public String getCalculator(
             @RequestParam(name = "operand1", required = false, defaultValue = "") String operand1,
             Model model) {
@@ -19,7 +19,7 @@ public class BinaryController {
         return "calculator";
     }
 
-    @PostMapping("/")
+    @PostMapping("/calculator")
     public String result(
             @RequestParam(name = "operand1", required = false, defaultValue = "") String operand1,
             @RequestParam(name = "operator", required = false, defaultValue = "") String operator,
