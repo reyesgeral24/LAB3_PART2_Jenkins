@@ -1,4 +1,3 @@
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/*.war app.war
-ENTRYPOINT ["java","-jar","/app.war"]
+FROM tomcat:9.0
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
